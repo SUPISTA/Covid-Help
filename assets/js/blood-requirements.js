@@ -8,13 +8,34 @@ form3.addEventListener('submit', (event) => {
     const email = form3.elements['email3'].value;
     const age = form3.elements['age3'].value;
     const gender = form3.elements['gender3'].value;
-    const blood = form3.elements['blood3'].value;
+    const bloodGroup = form3.elements['blood3'].value;
     const district = form3.elements['district3'].value;
     const state = form3.elements['state3'].value;
     const message = form3.elements['message3'].value;
 
-    const bloodRequirement = { name, mobile, email, age, gender, blood, district, state, message }
+    const bloodRequirementDetails = {
+        apiID: "BloodDonors-BloodRequirement-Create-Save-create",
+        data: {
+            Name: name,
+            Mobile: mobile,
+            Email: email,
+            Age: age,
+            Gender: gender,
+            District: district,
+            State: state,
+            Message: message,
+            BloodGroup: bloodGroup,
+        }
+    }
 
-    console.log(bloodRequirement);
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://supista.com/api/1/6083f8fdce57100e4e479450", true);
+    xhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+    xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
+    xhttp.setRequestHeader('Content-Type', 'Access-Control-Allow-Origin', 'Acces-Contorl-Allow-Methods');
+    xhttp.send(JSON.stringify(bloodRequirementDetails));
+    console.log(bloodRequirementDetails);
+
     form3.reset();
 });
