@@ -33,9 +33,7 @@ form3.addEventListener('submit', (event) => {
     xhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
-    xhttp.setRequestHeader('Content-Type', 'Access-Control-Allow-Origin', 'Acces-Contorl-Allow-Methods');
     xhttp.send(JSON.stringify(bloodRequirementDetails));
-    console.log(bloodRequirementDetails);
 
     form3.reset();
 });

@@ -8,16 +8,15 @@ form4.addEventListener('submit', (event) => {
     const email = form4.elements['email4'].value;
     const age = form4.elements['age4'].value;
     const gender = form4.elements['gender4'].value;
-    const bloodGroup = form4.elements['blood4'].value;
     const district = form4.elements['district4'].value;
     const state = form4.elements['state4'].value;
     const message = form4.elements['message4'].value;
+    const bloodGroup = form4.elements['blood4'].value;
 
     const bloodDonorDetails = {
-        apiID: "BloodDonors-BloodDonors-Create-Save-create",
         data: {
             Name: name,
-            Mobile: mobile,
+            MobileNumber: mobile,
             Email: email,
             Age: age,
             Gender: gender,
@@ -25,7 +24,8 @@ form4.addEventListener('submit', (event) => {
             State: state,
             Message: message,
             BloodGroup: bloodGroup,
-        }
+        },
+        apiID: "BloodDonors-BloodDonors-Create-Save-create"
     }
 
     const xhttp = new XMLHttpRequest();
@@ -33,9 +33,7 @@ form4.addEventListener('submit', (event) => {
     xhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
-    xhttp.setRequestHeader('Content-Type', 'Access-Control-Allow-Origin', 'Acces-Contorl-Allow-Methods');
     xhttp.send(JSON.stringify(bloodDonorDetails));
-    console.log(bloodDonorDetails);
 
     form4.reset();
 });

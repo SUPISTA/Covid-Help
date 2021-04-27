@@ -14,18 +14,18 @@ form1.addEventListener('submit', (event) => {
     const message = form1.elements['message1'].value;
 
     const plasmaRequirementsDetails = {
-        apiID: "PlasmaDonors-PlasmaRequirements-Create-Save-create",
         data: {
             Name: name,
             Mobile: mobile,
             Email: email,
             Age: age,
             Gender: gender,
+            BloodGroup: bloodGroup,
             District: district,
             State: state,
-            Message: message,
-            BloodGroup: bloodGroup,
-        }
+            Message: message
+        },
+        apiID: "PlasmaDonors-PlasmaRequirements-Create-Save-create"
     }
 
     const xhttp = new XMLHttpRequest();
@@ -33,9 +33,7 @@ form1.addEventListener('submit', (event) => {
     xhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
-    xhttp.setRequestHeader('Content-Type', 'Access-Control-Allow-Origin', 'Acces-Contorl-Allow-Methods');
     xhttp.send(JSON.stringify(plasmaRequirementsDetails));
-    console.log(plasmaRequirementsDetails);
 
     form1.reset();
 });

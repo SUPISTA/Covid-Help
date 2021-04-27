@@ -652,13 +652,16 @@ section {
     animation: animate-loading 1s linear infinite;
 }
 
-.plasma .php-email-form input, .plasma .php-email-form textarea {
+.plasma .php-email-form input,
+.plasma .php-email-form select,
+.plasma .php-email-form textarea {
     border-radius: 4px;
     box-shadow: none;
     font-size: 14px;
 }
 
-.plasma .php-email-form input {
+.plasma .php-email-form input,
+.plasma .php-email-form select {
     height: 44px;
 }
 
@@ -813,13 +816,15 @@ section {
     animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .php-email-form input,
+.contact .php-email-form select, 
+.contact .php-email-form textarea {
     border-radius: 4px;
     box-shadow: none;
     font-size: 14px;
 }
 
-.contact .php-email-form input {
+.contact .php-email-form input, .contact .php-email-form select {
     height: 44px;
 }
 
