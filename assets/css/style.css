@@ -1009,7 +1009,7 @@ section {
 }
 
 .team .member .pic img {
-    transition: ease-in-out 0.3s;
+    transition: 0.5s all ease-in-out;
 }
 
 .team .member:hover img {
