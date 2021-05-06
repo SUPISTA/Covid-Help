@@ -1,4 +1,6 @@
 const form1 = document.getElementById("plasma-requirements");
+const successMessage1 = document.querySelector(".sent-message1");
+const errorMessage1 = document.querySelector(".error-message1");
 
 form1.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -34,6 +36,23 @@ form1.addEventListener('submit', (event) => {
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
     xhttp.send(JSON.stringify(plasmaRequirementsDetails));
+
+    fetch(`https://supista.com/api/1/6083f8fdce57100e4e479450`, {
+        withCredentials: true
+    }).then(function (response) {
+        if (response.status === 200) {
+            successMessage1.classList.add('d-block');
+            setTimeout(() => {
+                successMessage1.classList.remove('d-block');
+            }, 5000);
+        }
+        else {
+            errorMessage1.classList.add('d-block');
+            setTimeout(() => {
+                errorMessage1.classList.remove('d-block');
+            }, 5000);
+        }
+    });
 
     form1.reset();
 });

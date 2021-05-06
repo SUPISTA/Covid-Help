@@ -1,4 +1,6 @@
 const form2 = document.getElementById("plasma-donor");
+const successMessage2 = document.querySelector(".sent-message2");
+const errorMessage2 = document.querySelector(".error-message2");
 
 form2.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -34,6 +36,23 @@ form2.addEventListener('submit', (event) => {
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
     xhttp.send(JSON.stringify(plasmaDonorDetails));
+
+    fetch(`https://supista.com/api/1/6083f8fdce57100e4e479450`, {
+        withCredentials: true
+    }).then(function (response) {
+        if (response.status === 200) {
+            successMessage2.classList.add('d-block');
+            setTimeout(() => {
+                successMessage2.classList.remove('d-block');
+            }, 5000);
+        }
+        else {
+            errorMessage2.classList.add('d-block');
+            setTimeout(() => {
+                errorMessage2.classList.remove('d-block');
+            }, 5000);
+        }
+    });
 
     form2.reset();
 });

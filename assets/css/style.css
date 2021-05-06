@@ -610,7 +610,7 @@ section {
     padding-bottom: 8px;
 }
 
-.plasma .php-email-form .error-message {
+.plasma .php-email-form .error-message1 {
     display: none;
     color: #fff;
     background: #ed3c0d;
@@ -619,11 +619,32 @@ section {
     font-weight: 600;
 }
 
-.plasma .php-email-form .error-message br + br {
+.plasma .php-email-form .error-message1 br + br {
     margin-top: 25px;
 }
 
-.plasma .php-email-form .sent-message {
+.plasma .php-email-form .sent-message1 {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+.plasma .php-email-form .error-message2 {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.plasma .php-email-form .error-message2 br + br {
+    margin-top: 25px;
+}
+
+.plasma .php-email-form .sent-message2 {
     display: none;
     color: #fff;
     background: #18d26e;
@@ -632,24 +653,48 @@ section {
     font-weight: 600;
 }
 
-.plasma .php-email-form .loading {
+.plasma .php-email-form .error-message3 {
     display: none;
-    background: #fff;
-    text-align: center;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
     padding: 15px;
+    font-weight: 600;
 }
 
-.plasma .php-email-form .loading:before {
-    content: "";
-    display: inline-block;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
-    border-top-color: #eee;
-    -webkit-animation: animate-loading 1s linear infinite;
-    animation: animate-loading 1s linear infinite;
+.plasma .php-email-form .error-message3 br + br {
+    margin-top: 25px;
+}
+
+.plasma .php-email-form .sent-message3 {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.plasma .php-email-form .error-message4 {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.plasma .php-email-form .error-message4 br + br {
+    margin-top: 25px;
+}
+
+.plasma .php-email-form .sent-message4 {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
 }
 
 .plasma .php-email-form input,
@@ -774,46 +819,26 @@ section {
     padding-bottom: 8px;
 }
 
-.contact .php-email-form .error-message {
+.contact .php-email-form .error-message5 {
     display: none;
     color: #fff;
-    background: #ed3c0d;
-    text-align: left;
+    background: #FF0000;
+    text-align: center;
     padding: 15px;
     font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message5 br + br {
     margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .php-email-form .sent-message5 {
     display: none;
     color: #fff;
     background: #18d26e;
     text-align: center;
     padding: 15px;
     font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-    display: none;
-    background: #fff;
-    text-align: center;
-    padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-    content: "";
-    display: inline-block;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
-    border-top-color: #eee;
-    -webkit-animation: animate-loading 1s linear infinite;
-    animation: animate-loading 1s linear infinite;
 }
 
 .contact .php-email-form input,
@@ -869,10 +894,13 @@ section {
 # About Us
 --------------------------------------------------------------*/
 .about {
-    padding: 140px 0;
-    height: 100vh;
+    padding: 50px 0;
+    min-height: 90vh;
     background: url("../img/about-bg.png") top center no-repeat;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about:before {

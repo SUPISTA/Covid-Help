@@ -1,4 +1,6 @@
 const form3 = document.getElementById("blood-requirements");
+const successMessage3 = document.querySelector(".sent-message3");
+const errorMessage3 = document.querySelector(".error-message3");
 
 form3.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -34,6 +36,23 @@ form3.addEventListener('submit', (event) => {
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
     xhttp.send(JSON.stringify(bloodRequirementDetails));
+
+    fetch(`https://supista.com/api/1/6083f8fdce57100e4e479450`, {
+        withCredentials: true
+    }).then(function (response) {
+        if (response.status === 200) {
+            successMessage3.classList.add('d-block');
+            setTimeout(() => {
+                successMessage3.classList.remove('d-block');
+            }, 5000);
+        }
+        else {
+            errorMessage3.classList.add('d-block');
+            setTimeout(() => {
+                errorMessage3.classList.remove('d-block');
+            }, 5000);
+        }
+    });
 
     form3.reset();
 });

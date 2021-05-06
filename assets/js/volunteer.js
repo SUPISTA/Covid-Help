@@ -1,4 +1,6 @@
 const form5 = document.getElementById("volunteer");
+const successMessage5 = document.querySelector(".sent-message5");
+const errorMessage5 = document.querySelector(".error-message5");
 
 form5.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -30,6 +32,23 @@ form5.addEventListener('submit', (event) => {
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhttp.setRequestHeader('Acces-Control-Allow-Methods', 'POST');
     xhttp.send(JSON.stringify(volunteerDetails));
+
+    fetch(`https://supista.com/api/1/6083f8fdce57100e4e479450`, {
+        withCredentials: true
+    }).then(function (response) {
+        if (response.status === 200) {
+            successMessage5.classList.add('d-block');
+            setTimeout(() => {
+                successMessage5.classList.remove('d-block');
+            }, 5000);
+        }
+        else {
+            errorMessage5.classList.add('d-block');
+            setTimeout(() => {
+                errorMessage5.classList.remove('d-block');
+            }, 5000);
+        }
+    });
 
     form5.reset();
 });
